@@ -1,0 +1,166 @@
+<!-- SECCIÓN DE NOTICIAS Y EVENTOS -->
+        <section class="seccion-info">
+            
+            <!-- FILA DE 2 CUADROS (Noticias Destacadas) -->
+            <h2 class="titulo-seccion">Noticias Recientes</h2>
+            <div class="contenedor-dos">
+                <div class="cuadro cuadro-grande">
+                    <div class="imagen-placeholder">aqui va la imagen</div>
+                    <h3>Firma de Calificaciones</h3>
+                    <p>Estimado Padre de Familia, asiste a la firma de calificaciones para el semestre en curso. Puedes consultarlas en el portal del alumno.</p>
+                    <a href="#" class="leer-mas">Leer más</a>
+                </div>
+                <div class="cuadro cuadro-grande">
+                    <div class="imagen-placeholder">aqui va la imagen</div>
+                    <h3>Mundialito 2026</h3>
+                    <p>Se acerca el evento más esperado del año. No te pierdas las últimas novedades.</p>
+                    
+                    <a href="#" class="leer-mas">Leer más</a>
+                </div>
+            </div>
+
+            <!-- FILA DE 3 CUADROS (Eventos o Info Rápida) -->
+            <h2 class="titulo-seccion">Próximos Eventos</h2>
+            <div class="contenedor-tres">
+    <!-- Cuadro con Imagen -->
+    <div class="cuadro cuadro-pequeno">
+        <div class="media-container">
+            aqui va la imagen
+        </div>
+        <h4>Taller de Diseño</h4>
+        <p>15 de Mayo - 10:00 AM</p>
+    </div>
+
+    <!-- Cuadro con Video -->
+    <div class="cuadro cuadro-pequeno">
+        <div class="media-container">
+            <video controls>
+                <source src="video/nombre_video.mp4" type="video/mp4">
+                Tu navegador no soporta videos.
+            </video>
+        </div>
+        <h4>Webinar Online</h4>
+        <p>20 de Mayo - 04:00 PM</p>
+    </div>
+
+    <!-- Cuadro con Info Rápida (Solo texto si quieres) -->
+    <div class="cuadro cuadro-pequeno">
+        <div class="media-container">
+            <img src="img/evento3.jpg" alt="Evento">
+        </div>
+        <h4>Reunión Mensual</h4>
+        <p>30 de Mayo - 09:00 AM</p>
+    </div>
+</div>
+</section>
+
+<!-- ESTILOS CSS PARA ESTA SECCIÓN (Agrégalos a tu bloque <style>) -->
+<style>
+   /* ESTILOS CSS PARA ESTA SECCIÓN (Agrégalos a tu bloque <style>) */
+
+    .seccion-info {
+        padding: 40px 0;
+    }
+
+    .titulo-seccion {
+        margin-bottom: 25px;
+        color: var(--color-oscuro);
+        border-left: 5px solid var(--color-primario);
+        padding-left: 15px;
+    }
+
+    /* Contenedores Flexbox */
+    .contenedor-dos, .contenedor-tres {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap; /* Para que sea responsivo */
+        margin-bottom: 50px;
+    }
+
+    /* Estilo base de los cuadros */
+    .cuadro {
+        background: var(--blanco);
+        border-radius: 12px;
+        padding: 20px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        transition: transform 0.3s ease;
+    }
+
+    .cuadro:hover {
+        transform: translateY(-5px);
+    }
+
+    /* Tamaños específicos */
+    .cuadro-grande {
+        flex: 1 1 calc(50% - 20px); /* 2 cuadros por fila */
+        min-width: 300px;
+    }
+
+    .cuadro-pequeno {
+        flex: 1 1 calc(33.33% - 20px); /* 3 cuadros por fila */
+        min-width: 250px;
+        border-top: 3px solid var(--color-primario);
+        align-items: center;
+    }
+.imagen-placeholder {
+    width: 100%;
+    height: auto;       /* Ya no obligamos a que mida 200px */
+    overflow: hidden;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.imagen-placeholder img {
+    width: 100%;        /* Ocupa todo el ancho disponible */
+    height: auto;       /* Mantiene su proporción natural */
+    display: block;
+}
+  
+    /* Elementos internos 
+    .imagen-placeholder {
+        background: #eee;
+        height: 150px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 8px;
+        margin-bottom: 15px;
+        color: #888;
+    }*/
+
+    .leer-mas {
+        display: inline-block;
+        margin-top: 15px;
+        color: var(--color-primario);
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 0.9rem;
+    }
+    /* Contenedor universal para fotos y videos */
+.media-container {
+    width: 100%;
+    height: 180px;         /* Altura fija para que los 3 cuadros estén parejos */
+    background-color: #1a1a1a; /* Fondo oscuro para resaltar el contenido */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    overflow: hidden;
+}
+
+/* Ajuste para que se vea TODO (Imagen) */
+.media-container img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;   /* ESTA ES LA CLAVE: No corta nada */
+}
+
+/* Ajuste para que se vea TODO (Video) */
+.media-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;   /* ESTA ES LA CLAVE: Muestra el video completo */
+    outline: none;
+}
+</style>

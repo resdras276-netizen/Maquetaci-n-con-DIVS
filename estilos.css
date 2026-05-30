@@ -1,0 +1,257 @@
+
+    /* Elimina márgenes y rellenos por defecto y ajusta el modelo de caja */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Estilos generales del cuerpo de la página */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fuente moderna y legible */
+      height: 100vh; /* Altura completa de la ventana */
+      background: url('https://images.unsplash.com/photo-1508780709619-79562169bc64?auto=format&fit=crop&w=1600&q=80') 
+        no-repeat center center fixed; /* Imagen de fondo centrada y fija */
+      background-size: cover; /* Ajusta la imagen para cubrir toda la pantalla */
+      position: relative; /* Necesario para colocar la capa transparente encima */
+    }
+
+    /* Capa oscura semitransparente sobre el fondo */
+    body::before {
+      content: ""; /* Obligatorio para pseudoelemento */
+      position: absolute; /* Cubre toda la pantalla */
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.5); /* Negro con opacidad del 50% */
+      z-index: 0; /* Detrás del contenido principal */
+    }
+
+    /* Caja del formulario de login */
+    .login-box {
+      position: relative; /* Para situarse por encima de la capa oscura */
+      z-index: 1; /* Encima de la capa transparente */
+      background-color: rgba(255, 255, 255, 0.9); /* Blanco con opacidad (transparente) */
+      padding: 40px; /* Espacio interior */
+      border-radius: 15px; /* Bordes redondeados */
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3); /* Sombra para efecto flotante */
+      width: 100%;
+      max-width: 350px; /* Ancho máximo */
+      margin: auto; /* Centrado horizontal */
+      top: 50%;
+      transform: translateY(-50%); /* Centrado vertical */
+    }
+
+    /* Título del formulario */
+    .login-box h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #0072ff; /* Azul moderno */
+    }
+
+    /* Etiquetas de los campos */
+    .login-box label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    /* Campos de texto */
+    .login-box input[type="text"],
+    .login-box input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      outline: none;
+      transition: 0.3s ease; /* Suaviza efectos al enfocar */
+    }
+
+    /* Efecto al enfocar los campos */
+    .login-box input[type="text"]:focus,
+    .login-box input[type="password"]:focus {
+      border-color: #0072ff; /* Borde azul al enfocar */
+      box-shadow: 0 0 5px rgba(0, 114, 255, 0.3);
+    }
+
+    /* Botón de enviar */
+    .login-box input[type="submit"] {
+      width: 100%;
+      padding: 12px;
+      background-color: #0072ff; /* Azul moderno */
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    /* Efecto al pasar el mouse sobre el botón */
+    .login-box input[type="submit"]:hover {
+      background-color: #005bb5; /* Azul más oscuro al pasar el cursor */
+    }
+
+    /* Estilos para enlaces adicionales */
+    .login-box .extra {
+      text-align: center;
+      margin-top: 15px;
+    }
+
+    .login-box .extra a {
+      text-decoration: none;
+      color: #0072ff;
+      font-size: 14px;
+    }
+
+    .login-box .extra a:hover {
+      text-decoration: underline; /* Subrayado al pasar el cursor */
+    }
+
+    <style>
+    /*swiper*/
+/* --- ESTILOS DEL BANNER --- */
+.mainBanner {
+    width: 100%;
+    height: 450px; /* Altura ideal tipo e-commerce */
+    position: relative;
+}
+
+.mainBanner .swiper-slide {
+    position: relative;
+    overflow: hidden;
+}
+
+.mainBanner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajuste perfecto de la imagen */
+    object-position: center;
+}
+
+/* Capa de contenido sobre la imagen */
+.banner-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center; /* Centrado vertical */
+    padding-left: 10%; /* Alineado a la izquierda como ML */
+    background: linear-gradient(to right, rgba(0,0,0,0.4), transparent); /* Degradado para legibilidad */
+}
+
+.text-box {
+    color: white;
+    max-width: 500px;
+}
+
+.text-box span {
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: var(--color-primario);
+}
+
+.text-box h1 {
+    font-size: 3rem;
+    margin: 10px 0 20px;
+    line-height: 1.1;
+}
+
+.btn-comprar {
+    padding: 12px 30px;
+    background: var(--color-primario);
+    border: none;
+    color: white;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.btn-comprar:hover {
+    transform: scale(1.05);
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+    .mainBanner { height: 300px; }
+    .text-box h1 { font-size: 1.8rem; }
+    .banner-content { padding-left: 5%; }
+}
+/* --- ESTILOS DEL BANNER --- */
+.mainBanner {
+    width: 100%;
+    height: 450px;
+    position: relative;
+}
+
+/* Hace que todo el slide sea clickable */
+.banner-link {
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.mainBanner .swiper-slide {
+    position: relative;
+    overflow: hidden;
+}
+
+.mainBanner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.5s ease; /* Efecto zoom opcional */
+}
+
+/* Zoom suave al pasar el mouse por el banner */
+.banner-link:hover img {
+    transform: scale(1.05);
+}
+
+/* Capa de contenido: Alineada ABAJO a la IZQUIERDA */
+.banner-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: flex-end; /* Mueve el texto al fondo */
+    justify-content: flex-start; /* Mueve el texto a la izquierda */
+    padding: 40px 5%; /* Espacio desde los bordes */
+    /* Degradado oscuro desde abajo para que el texto blanco se lea perfecto */
+    background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 40%);
+    box-sizing: border-box;
+}
+
+.text-box {
+    color: white;
+    max-width: 80%;
+}
+
+.text-box h1 {
+    font-size: 2.5rem;
+    margin: 0;
+    line-height: 1.2;
+    font-weight: 600;
+    /* Sombra de apoyo */
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+    .mainBanner { height: 300px; }
+    .text-box h1 { font-size: 1.5rem; }
+    .banner-content { padding: 20px 5%; }
+}
+</style>
